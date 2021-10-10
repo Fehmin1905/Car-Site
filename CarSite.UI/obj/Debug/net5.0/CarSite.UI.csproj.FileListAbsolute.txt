@@ -38,3 +38,4 @@ D:\CarSite(University)\CarSite\CarSite.UI\obj\Debug\net5.0\ref\CarSite.UI.dll
 D:\CarSite(University)\CarSite\CarSite.UI\obj\Debug\net5.0\CarSite.UI.pdb
 D:\CarSite(University)\CarSite\CarSite.UI\obj\Debug\net5.0\CarSite.UI.genruntimeconfig.cache
 D:\CarSite(University)\CarSite\CarSite.UI\obj\Debug\net5.0\CarSite.UI.csproj.CopyComplete
+D:\CarSite(University)\CarSite\CarSite.UI\bin\Debug\net5.0\libman.json
