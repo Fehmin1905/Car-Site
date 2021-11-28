@@ -23,6 +23,18 @@ namespace CarSiteMVC.UI.Controllers
             return View();
         }
 
+        public IActionResult IndexDemo()
+        {
+            return View();
+        }
+
+        
+
+
+
+
+
+        //------------------
         public IActionResult Privacy()
         {
             return View();
@@ -32,6 +44,11 @@ namespace CarSiteMVC.UI.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        
+        public IActionResult Test()
+        {
+            return View();
         }
     }
 }

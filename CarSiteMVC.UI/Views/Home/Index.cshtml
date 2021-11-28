@@ -1,20 +1,19 @@
-﻿@{
+﻿@{ 
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
 
@@ -22,7 +21,7 @@
 
         <div id="menu-btn" class="fas fa-bars"></div>
 
-        <a href="#" class="logo"> <span>eco</span>cars </a>
+        <a asp-controller="Home" asp-action="Index" class="logo"> <span>eco</span>cars </a>
 
         <nav class="navbar">
             <a href="#home">Buy</a>
@@ -35,29 +34,28 @@
         <div id="login-btn">
             <button class="btn">login</button>
             <i class="far fa-user"></i>
+            <div class="login-form-container">
+
+                <span id="close-login-form" class="fas fa-times"></span>
+
+                <form action="">
+                    <h3>user login</h3>
+                    <input type="email" placeholder="email" class="box">
+                    <input type="password" placeholder="password" class="box">
+                    <p> forget your password <a href="#">click here</a> </p>
+                    <input type="submit" value="login" class="btn">
+                    <p>or login with</p>
+                    <div class="buttons">
+                        <a href="#" class="btn"> google </a>
+                        <a href="#" class="btn"> facebook </a>
+                    </div>
+                    <p> don't have an account <a href="#">create one</a> </p>
+                </form>
+
+            </div>
         </div>
 
     </header>
-
-    <div class="login-form-container">
-
-        <span id="close-login-form" class="fas fa-times"></span>
-
-        <form action="">
-            <h3>user login</h3>
-            <input type="email" placeholder="email" class="box">
-            <input type="password" placeholder="password" class="box">
-            <p> forget your password <a href="#">click here</a> </p>
-            <input type="submit" value="login" class="btn">
-            <p>or login with</p>
-            <div class="buttons">
-                <a href="#" class="btn"> google </a>
-                <a href="#" class="btn"> facebook </a>
-            </div>
-            <p> don't have an account <a href="#">create one</a> </p>
-        </form>
-
-    </div>
 
     <section class="home" id="home">
 
@@ -65,7 +63,7 @@
 
         <img data-speed="5" class="home-parallax" src="image/title2.jpeg" alt="">
 
-        <a data-speed="7" href="#" class="btn home-parallax">explore cars</a>
+        <a data-speed="7" asp-controller="ExploreCar" asp-action="Index" class="btn home-parallax">explore cars</a>
 
     </section>
 
@@ -423,7 +421,7 @@
     </section>
 
 
-    
+
 
     <section class="contact" id="contact">
 
@@ -460,9 +458,9 @@
 
             <div class="box">
                 <h3>contact info</h3>
-                <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-                <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-                <a href="#"> <i class="fas fa-envelope"></i> hellofreewebsitecode@gmail.com </a>
+                <a href="#"> <i class="fas fa-phone"></i> +99470-712-17-10 </a>
+                <a href="#"> <i class="fas fa-phone"></i> +99451-924-11-33 </a>
+                <a href="#"> <i class="fas fa-envelope"></i> fehminqurbanli6@gmail.com </a>
                 <a href="#"> <i class="fas fa-map-marker-alt"></i> City - Country - 000000 </a>
             </div>
 
@@ -480,19 +478,12 @@
         <div class="credit"> created by fehmin all rights reserved </div>
 
     </section>
-
-
-
-
-
-
-
-
-
+    <script src="js/script.js"></script>
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
-    <script src="js/script.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
 </body>
 </html>
