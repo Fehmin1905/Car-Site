@@ -39,6 +39,5 @@ D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\CarSiteMVC.UI.genr
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\CarSiteMVC.UI.csproj.CopyComplete
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\ExploreCar\Index.cshtml.g.cs
-D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\Home\Test.cshtml.g.cs
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\Home\IndexDemo.cshtml.g.cs
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\bin\Debug\net5.0\libman.json
