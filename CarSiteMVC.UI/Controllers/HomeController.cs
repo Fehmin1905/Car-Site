@@ -30,7 +30,10 @@ namespace CarSiteMVC.UI.Controllers
 
         
 
-
+        public IActionResult About()
+        {
+            return View();
+        }
 
 
 
