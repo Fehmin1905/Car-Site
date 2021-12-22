@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace CarSiteMVC.UI.Controllers
 {
-    public class ExploreCarController : Controller
+    public class AddCarController : Controller
     {
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Details()
         {
             return View();
         }

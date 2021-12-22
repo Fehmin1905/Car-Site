@@ -42,3 +42,5 @@ D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\Explor
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\Home\IndexDemo.cshtml.g.cs
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\bin\Debug\net5.0\libman.json
 D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\ExploreCar\Details.cshtml.g.cs
+D:\CarSite(University)\CarSite\CarSiteMVC.UI\obj\Debug\net5.0\Razor\Views\AddCar\Index.cshtml.g.cs

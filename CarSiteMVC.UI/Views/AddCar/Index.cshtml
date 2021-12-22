@@ -1,0 +1,540 @@
+﻿
+
+
+<form method="post" enctype="multipart/form-data" asp-action="Save" asp-controller="AddAds">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="@Model.tB_ADS_Model.Id" />
+    <div class="container">
+        <div class="p-2">
+            <h6 class="p-2">&nbsp;ELAN YERLƏŞDİRMƏK</h6>
+            <span class="border-bottom"></span>
+        </div>
+
+        <div class="container rounded pt-2" style="background-color: #DAF0EF;height: 300px;width:700px">
+            <h5 class="text-center" style="color:blue">YENİ ELAN</h5>
+            <p class="text-center">
+                CHOOSING A FAIR PRICE WILL RESULT IN A FASTER SALE
+                We will help you price your vehicle fairly with true market data powered by BlackBook™
+            </p>
+            <div class="justify-content-center">
+                <p class="text-center" style="color:blue">
+                    Əlaqə nömrənizi daxil edin:
+                </p>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <input type="tel" class="form-control align-content-center text-center" placeholder="(070) 777-88-99"><br />
+                        <div class="row">
+                            <a class="btn btn-success rounded-pill">Davam etmək ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        @*--------------------------*@
+        <div class="container">
+            <h5>ELAN</h5><br />
+            <ul>
+                <li><small>Üç ay ərzində bir nəqliyyat vasitəsi yalnız bir dəfə pulsuz dərc oluna bilər.</small></li>
+                <li><small>Üç ay ərzində təkrar və ya oxşar elanlar (marka/model, rəng) ödənişlidir.</small></li>
+                <li><small>Elanınızı saytın ön sıralarında görmək üçün "İrəli çək" xidmətindən istifadə edin.</small></li>
+            </ul>
+            <div>
+                <div class="row">
+                    <div class="col-2">
+                        <small>Brand <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" id="SelectListCarBrand" asp-items="@(new SelectList(Model.brandsModels,"Id","BrandName"))">
+                            <option selected>Select Brand</option>
+                        </select>
+
+
+                    </div>
+                    <div class="col-2">
+                        <small>Yanacaq növü <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Fuel_Type_Id" asp-items="@(new SelectList(Model.fuels,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Fuel_Type_Id" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-2">
+                        <small>Model <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" id="SelectListCarModel" asp-for="@Model.tB_ADS_Model.Model_Id">
+                            <option>Select Model</option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Model_Id" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <small>Transmission <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Transmission_Id" asp-items="@(new SelectList(Model.transmission,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Transmission_Id" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-2">
+                        <small>Ban Type <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Ban_Type" asp-items="@(new SelectList(Model.ban_type,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Ban_Type" class="text-danger"></span>
+                    </div>
+                    <div class="col-2">
+                        <small>Speed Box <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Speed_Box" asp-items="@(new SelectList(Model.speed_box,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Speed_Box" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col-2">
+                        <small>Distance <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="row col-4 ">
+                        <div class="col-6">
+                            <input type="number" asp-for="@Model.tB_ADS_Model.Distance" class="form-control" step="10000">
+                            <span asp-validation-for="@Model.tB_ADS_Model.Distance" class="text-danger"></span>
+                        </div>
+                        <div class="col-6 row">
+                            <div class="form-check col ">
+                                <input class="form-check-input" asp-for="@Model.tB_ADS_Model.Distance" value="9" type="radio" checked>
+                                <label class="form-check-label" asp-for="@Model.tB_ADS_Model.Distance">
+                                    km
+                                </label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" asp-for="@Model.tB_ADS_Model.Distance" value="9" type="radio">
+                                <label class="form-check-label" asp-for="@Model.tB_ADS_Model.Distance">
+                                    mi
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <div style="margin-left:13%">
+                            <small>Year <small style="color: #ca1016;">*</small></small>
+                        </div>
+                    </div>
+                    <div class="col-4 " style="margin-left:1.7%;">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Year">
+                            <option></option>
+                            @for (int i = 1950; i < DateTime.Now.Year; i++)
+                            {
+                                <option>@i</option>
+                            }
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Year" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <br />
+
+
+
+                <div class="row">
+                    <div class="col-2">
+                        <small>Color <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Color_Id" asp-items="@(new SelectList(Model.color,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Color_Id" class="text-danger"></span>
+
+                    </div>
+                    @*bunu cixararsan*@
+                    <div class="col-2">
+                        <small>Mühərrikin həcmi, sm<sup>3</sup> <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.Motor_Volume" asp-items="@(new SelectList(Model.engine_size,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Motor_Volume" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-2">
+                        <small>Price <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="row col-4 ">
+                        <div class="col-6">
+                            <input type="number" class="form-control" asp-for="@Model.tB_ADS_Model.Price" min="500">
+                            <span asp-validation-for="@Model.tB_ADS_Model.Price" class="text-danger"></span>
+                        </div>
+                        <div class="col-6 row">
+                            <div class="form-check col ">
+                                <input class="form-check-input" asp-for="@Model.tB_ADS_Model.Currency_Id" value="1" type="radio" checked>
+                                <label class="form-check-label" asp-for="@Model.tB_ADS_Model.Currency_Id">
+                                    <small>AZN</small>
+                                </label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" asp-for="@Model.tB_ADS_Model.Currency_Id" value="2" type="radio">
+                                <label class="form-check-label" asp-for="@Model.tB_ADS_Model.Currency_Id">
+                                    <small>USD</small>
+                                </label>
+                            </div>
+                            <div class="form-check col">
+                                <input class="form-check-input" asp-for="@Model.tB_ADS_Model.Currency_Id" value="3" type="radio">
+                                <label class="form-check-label" asp-for="@Model.tB_ADS_Model.Currency_Id">
+                                    <small>EUR</small>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    @*cixararsan bunu*@
+                    <div class="col-2" style="margin-left:1.7%;">
+                        <small>Mühərrikin gücü, a.g. <small style="color: #ca1016;">*</small></small>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" asp-for="@Model.tB_ADS_Model.Motor_Power">
+                        <span asp-validation-for="@Model.tB_ADS_Model.Motor_Power" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+            </div>
+
+            <div class="row">
+                <div class="col-4 offset-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Credit_Have">
+                        <label class="form-check-label">
+                            Kreditdədir
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Barter">
+                        <label class="form-check-label">
+                            Barter mümkündür
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <small>Əlavə məlumat</small>
+                </div>
+                <div class="col-10">
+                    <textarea class="form-control" rows="3" asp-for="@Model.tB_ADS_Model.Note"></textarea>
+                    <small style="color:darkgray;">telefon nömrələri qeyd etmək qadağandır</small>
+                </div>
+            </div>
+
+            <br />
+            <div>
+                <h5>Car Supply</h5>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Allow_Wheels">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+                                Yüngül lehimli disklər
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Central_Closure">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+
+                                Mərkəzi qapanma
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Leather_Salon">
+                            <label class="form-check-label">
+                                Dəri salon
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Seat_Ventilation">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+
+                                Oturacaqların ventilyasiyası
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.ABS">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+
+                                ABS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Park_Radar">
+                            <label class="form-check-label">
+                                Park radarı
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Xenon_Lamps">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+
+                                Ksenon lampalar
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Lyuk">
+                            <label class="form-check-label">
+                                Lyuk
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Condisioner">
+                            <label class="form-check-label">
+                                Kondisioner
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Rear_Camera">
+                            <label class="form-check-label">
+                                Arxa görüntü kamerası
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Rain_Sensor">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+
+                                Yağış sensoru
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Seat_Heating">
+                            <label class="form-check-label">
+                                Oturacaqların isidilməsi
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="@Model.tB_ADS_Model.Side_Curtains">
+                            <label class="form-check-label">
+                                @*bunu cixar*@
+
+                                Yan pərdələr
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div>
+                <h5>Şəkillər</h5>
+                <div class="row mb-2 mt-2" style="border-style:dashed; border-color:darkgray;">
+                    <div class="col-3 mt-3">
+                        <ul style="list-style-type:none; color:darkgray">
+                            <li><p>- Minimum – 3 şəkil (ön, arxa və bütöv ön panelin görüntüsü mütləqdir).</p></li>
+                            <li><p>- Maksimum – 21 şəkil.</p></li>
+                            <li><p>- Optimal ölçü – 1024x768 piksel.</p></li>
+                        </ul>
+
+                    </div>
+                    <div class="col-9 row mt-4">
+                        <div class="col frontView" style="width:125px;height:125px;">
+                            <a href="">
+                                <img src="~/images/frontCar.jpg" style="width:100%;height:100%;" />
+                                <input type="file" name="ifile" multiple />
+                            </a>
+                        </div>
+                        <div class="col backView" style="width:125px;height:125px;">
+                            <a href=""><img src="~/images/back_car.jpg" style="width: 100%; height: 100%; " /></a>
+                        </div>
+                        <div class="col frontPanel" style="width:125px;height:125px;">
+                            <a href=""><img src="~/images/frontPanel2.jpg" style="width: 100%; height: 100%; " /></a>
+                        </div>
+                        <div class="col plusLogo" style="width:125px;height:125px;">
+                            <a href=""><img src="~/images/plusLogo.png" style="width: 100%; height: 100%;" /></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <br />
+            <div class="row mt-3">
+                <div class="col">
+                    <ul style="list-style-type:circle;color:darkgray">
+                        <li><small>Şəkillər Azərbaycan Respublikasının ərazisində çəkilməlidir.</small></li>
+                        <li><small>Şəkillər yaxşı keyfiyyətdə olmalıdır. Nəqliyyat vasitəsi yaxşı işıqlandırılmış olmalı, şəkillərin üzərində loqotip və digər yazılar olmamalıdır. Skrinşotlar qəbul olunmur.</small></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul style="list-style-type:circle;color:darkgray">
+                        <li><small>Avtosalonda çəkilmiş şəkillər qeydiyyatdan keçmiş avtosalonun hesabından уerləşdirilməlidir.</small></li>
+                        <li><small>Şəxsi sahibi tərəfindən satılan nəqliyyat vasitəsinin şəkli avtosalon/rəsmi servis ərazisində və ya yaxınlığında çəkilməməlidir.</small></li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <div>
+                <h5>Əlaqə</h5>
+                <small style="color:darkgray;">Elan dərc olunduqdan sonra əlaqə məlumatları ilə bağlı heç bir dəyişiklik həyata keçirilmir.</small>
+                <div class="row">
+                    <div class="col-2">
+                        <small>Adınız <small style="color: #ca1016;">*</small></small>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Name" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" asp-for="@Model.tB_ADS_Model.Name">
+                        <span asp-validation-for="@Model.tB_ADS_Model.Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-2">
+                        <small>Şəhər <small style="color: #ca1016;">*</small></small>
+                        <span asp-validation-for="@Model.tB_ADS_Model.City_Id" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-4">
+                        <select class="form-select" asp-for="@Model.tB_ADS_Model.City_Id" asp-items="@(new SelectList(Model.cities,"Id","Name"))">
+                            <option></option>
+                        </select>
+                        <span asp-validation-for="@Model.tB_ADS_Model.City_Id" class="text-danger"></span>
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-2">
+                        <small>E-mail <small style="color: #ca1016;">*</small></small>
+                        <span asp-validation-for="@Model.tB_ADS_Model.Email" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" asp-for="@Model.tB_ADS_Model.Email">
+                        <span asp-validation-for="@Model.tB_ADS_Model.Email" class="text-danger"></span>
+                        <small style="color:darkgray">saytda göstərilmir</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br />
+
+
+    </div>
+    <div style="height:10px;width:100%; background-color:darkgray;"></div>
+    <br />
+
+
+
+
+
+
+    <div class="container">
+        <br />
+        <h4>Elanın növünü seçin:</h4><br />
+        <div class="row">
+            <div class="col-4 offset-1" style="height: 260px;border-radius: 2%;background-color: #6d2a98;">
+                <div class="container" style="background-color: #6d2a98;">
+                    <div class="row">
+                        <div class="col-6 row container" style="background-color: #fac732;">
+                            <div class="col-4 mt-2" style="height:60px;">
+                                <h2 style="color:#6d2a98">10</h2><br /><h6 style="color:#6d2a98">dəfə</h6>
+                            </div>
+                            <div class="col-8 mt-4">
+                                <label style="color: #6d2a98">daha çox</label><br /><label style="color: #6d2a98">baxış sayı</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-3" style="margin-left:10px">
+                        <h5 style="color:white">VIP elan</h5>
+                        <small style="color:white">Sizin elanınız saytın ən populyar<br /> mövqelərində nümayiş olunur və <br /> maksimal sayda alıcı cəlb edir!</small>
+                    </div>
+                    <div class="row mt-3">
+                        <a class="btn rounded-pill vipElan col-8 offset-2"><b>15 AZN-ə yerləşdir</b></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-4 rounded-1" style="height: 260px;border-radius: 2%;background-color: #def2fe;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 row container" style="background-color: #4a8ad7;">
+                            <div class="row" style="margin-left:5px;width:190px">
+                                <h5 style="color:white">Turbo.az-da elan<br />yerləşdirmək<br />pulsuzdur!</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mt-1" style="margin-left:10px">
+                        <h5>Sadə elan</h5>
+                        <small>Siz Turbo.az-da elanınızı pulsuz yerləşdirə bilərsiniz, lakin ödənişli xidmətlərdən istifadə etsəniz, avtomobilinizi daha tez satacaqsınız.</small>
+                    </div>
+                    <div class="row mt-1">
+                        <button class="btn rounded-pill vipElan col-8 offset-2" type="submit" asp-controller="AddAds" asp-action="Save" style="color: #4a8ad7;"><b>Pulsuz yerləşdir</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="container row">
+            <div class="col-8 offset-1">
+                <small>Elan yerləşdirərək, siz Turbo.az-ın <a asp-controller="Home" asp-action="IstifadeciRazilasmasi">İstifadəçi razılaşması</a> və <a asp-controller="Home" asp-action="Qaydalar">Qaydaları</a> ilə razı olduğunuzu təsdiq edirsiniz.</small>
+            </div>
+        </div>
+        <br />
+    </div>
+</form>
+
+@*Javascript codes*@
+<script type="text/javascript">
+    $('#SelectListCarBrand').on('change', function () {
+        $.getJSON('/AddAds/GetModelsForBrand?id=' + $(this).val(), function (data) {
+
+            var items = ''
+            $.each(data, function (i, item) {
+                items += "<option value='" + item.id + "'>" + item.modelName + "</option > "
+
+            });
+            $('#SelectListCarModel').html(items);
+        });
+    });
+
+</script>
